@@ -5,7 +5,7 @@ mariadb -u root -p
 show databases;
 
 -- (board)스키마 생성 / db이름은 대문자 안된다
-CREATE DATABASE board; -- 명령어 대문자원칙 (소문자도 가능)
+CREATE DATABASE board; -- 명령어 대문자원칙 (이지만 소문자도 가능)
 
 -- 끝내기 : 컨트롤 c
 
@@ -36,6 +36,8 @@ CREATE table posts(id INT PRIMARY KEY, title VARCHAR(225), content VARCHAR(225),
 -- 테이블 index 조회
 show index from author;
 show index from posts;
+-- pk와 fk, unique 자동으로 index가 생성된다.
+-- 목차페이지 (검색의 성능을 높일 수 있다.)
 
 -- ALTER문 : 테이블의 구조를 변경
 -- 테이블 이름 변경
