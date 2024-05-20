@@ -36,3 +36,5 @@ alter table post add CONSTRAINT post_author_fk foreign key(author_id) references
 -- (실습) on delete set null, on update cascade
 ALTER TABLE post DROP FOREIGN KEY  post_author_fk;
 alter table post add CONSTRAINT post_author_fk foreign key(author_id) references author(id) on delete set null on update cascade;
+
+-- ~ 20240517
