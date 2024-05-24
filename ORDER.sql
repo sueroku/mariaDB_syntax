@@ -126,8 +126,8 @@ END
 // DELIMITER ;
 
 DELIMITER //
-CREATE PROCEDURE 구매자주문하기(in 이름1 varchar(255), in 재고량1 int, in 이름2 varchar(255), in 재고량2 int,
-in 이름3 varchar(255), in 재고량3 int, in 이메일 varchar(255))
+CREATE PROCEDURE 구매자주문하기(in 이름일 varchar(255), in 재고량일 int, in 이름이 varchar(255), in 재고량이 int,
+in 이름삼 varchar(255), in 재고량삼 int, in 이메일 varchar(255))
 BEGIN
     declare customerId int;
     declare productId int;
@@ -139,14 +139,14 @@ BEGIN
     -- 사실 해야할게 많다! 재고량이 없으면 실패해야하고 허허허 일단 그냥 만든다!
     -- 서로 다른 판매자가 파는 상품이름이 중복될 수도 있다. 허허허 그냥 꽃밭으로 만든다!
     
-	select id into productId from products where name=이름1;
-    insert into order_detail(product_id, supply, order_id) values(productId, 재고량1, orderID);
-    update products set STOCK = stock-재고량1 where id=productId; 
-    select id into productId from products where name=이름2;
-    insert into order_detail(product_id, supply, order_id) values(productId, 재고량2, orderID);
-	update products set STOCK = stock-재고량2 where id=productId; 
-    select id into productId from products where name=이름3;
-    insert into order_detail(product_id, supply, order_id) values(productId, 재고량3, orderID);
-    update products set STOCK = stock-재고량3 where id=productId; 
+	select id into productId from products where name=이름일;
+    insert into order_detail(product_id, supply, order_id) values(productId, 재고량일, orderID);
+    update products set STOCK = stock-재고량일 where id=productId; 
+    select id into productId from products where name=이름이;
+    insert into order_detail(product_id, supply, order_id) values(productId, 재고량이, orderID);
+	update products set STOCK = stock-재고량이 where id=productId; 
+    select id into productId from products where name=이름삼;
+    insert into order_detail(product_id, supply, order_id) values(productId, 재고량삼, orderID);
+    update products set STOCK = stock-재고량삼 where id=productId; 
 END
 // DELIMITER ;
