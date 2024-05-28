@@ -14,4 +14,3 @@ echo "사용자의 최근 본 상품목록 : "
 redis-cli zrevrange recent:products 0 4
 
 # --> vi 편집기 test2.sh // chmod 777 test2.sh  //  ./test2.sh
-
